@@ -1,5 +1,9 @@
 let size = 16;
 
+function reset () {
+    setup(size);
+}
+
 function setup(size){
     let canvas = document.querySelector(".canvas");
 

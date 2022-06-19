@@ -17,10 +17,39 @@ h1 {
     margin: 2.5rem;
 }
 
-.board {
-    border: 1rem solid #CCD5AE;
-    padding: 2rem;
+#content {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
 }
+
+#tools {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#reset {
+    padding: 0.4rem 1.2rem;
+    border: 0.1rem solid #D4A373;
+    border-radius: 0.3rem;
+    background-color: #f8efdb;
+    color: #745a3e;
+    font-family: "Anek Latin", sans-serif;
+    font-size: 1.2rem;
+}
+
+#reset:hover {
+    background-color: #dac69e;
+    color: white;
+    box-shadow: 0 0 0.4rem gray;
+}
+
+#tools, .board {
+    border: 0.8rem solid #CCD5AE;
+    padding: 1.8rem;
+}
+
 
 .canvas {
     width: 25rem;
