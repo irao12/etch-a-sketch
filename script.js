@@ -11,11 +11,14 @@ function changeSize(){
     value = parseInt(value);
     console.log(value);
     if (value < 1 || value > 100){
-        let errorMessage = document.createElement("div");
-        errorMessage.classList.add("error");
-        errorMessage.textContent = "Please enter a number from 1 to 100";
-        let sizeSelector = document.querySelector("#sizeSelector");
-        sizeSelector.insertBefore(errorMessage, document.querySelector("#changeSizeButton"));
+        if (!document.querySelector(".error"))
+        {
+            let errorMessage = document.createElement("div");
+            errorMessage.classList.add("error");
+            errorMessage.textContent = "Please enter a number from 1 to 100";
+            let sizeSelector = document.querySelector("#sizeSelector");
+            sizeSelector.insertBefore(errorMessage, document.querySelector("#changeSizeButton"));
+        }
     }
     else {
         console.log(document.querySelector(".error"));
