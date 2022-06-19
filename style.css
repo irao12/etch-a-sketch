@@ -77,8 +77,8 @@ h1 {
 
 
 .canvas {
-    width: 25rem;
-    height: 25rem;
+    width: 30rem;
+    height: 30rem;
 
     display: flex;
     flex-direction: column;
