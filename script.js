@@ -1,4 +1,5 @@
 let size = 16;
+let currColor = "black";
 
 function reset () {
     setup(size);
@@ -59,8 +60,21 @@ function setup(size){
 
     const squares = document.querySelectorAll(".square");
     squares.forEach( square => square.addEventListener('mouseover', function (e){
-        e.target.style.backgroundColor = "black";
+        e.target.style.backgroundColor = currColor;
     }));
 }
 
 setup(size);
+const colors = document.querySelectorAll(".color");
+
+colors.forEach(color => {
+    color.style.backgroundColor = color.id;
+    color.addEventListener("click", (e)=> currColor = e.target.id);
+});
+
+const picker = document.querySelector("#picker");
+picker.addEventListener("input", (e) => currColor = e.target.value);
+const wheel = document.querySelector("#thirdRow img");
+wheel.addEventListener("click", picker.click());
+
+document.querySelector("#eraser").addEventListener("click", () => currColor = "white");

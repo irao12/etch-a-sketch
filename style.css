@@ -27,7 +27,8 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    max-width: 10rem;
+    max-width: 9rem;
+    align-items: center;
 }
 
 #reset, #changeSizeButton {
@@ -68,6 +69,69 @@ h1 {
 
 #changeSizeButton {
     padding: 0.4rem 2rem;
+}
+
+#colorSelector{
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+#firstRow, #secondRow, #thirdRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 0.4rem;
+}
+
+#thirdRow {
+    justify-content: center;
+    gap: 0.6rem;
+    margin-top: 1rem;
+}
+
+#thirdRow > input {
+    width: 2.8rem;
+    height: 2.8rem;
+    appearance: none;
+     -moz-appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    border: 1px solid #D4A373;
+    border-radius: 0.3rem;
+    padding: 0;
+}
+
+::-webkit-color-swatch-wrapper {
+    padding: 2px;
+}
+
+::-webkit-color-swatch {
+    border: 0;
+    border-radius: 0;
+}
+
+::-moz-color-swatch,
+::-moz-focus-inner {
+    border: 0;
+}
+
+::-moz-focus-inner {
+    padding: 0;
+}
+
+.color {
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid #D4A373;
+    padding: 0.8rem;
+    border-radius: 0.3rem;
+}
+
+img {
+    width: 3rem;
+    height: 3rem;
+
 }
 
 #tools, .board {
