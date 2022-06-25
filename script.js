@@ -57,7 +57,7 @@ function setup(size){
 
     const squares = document.querySelectorAll(".square");
     squares.forEach( square => square.addEventListener('mouseover', function (e){
-        e.target.style.backgroundColor = currColor;
+        e.target.style.backgroundColor = isRandom? random_rgba() : currColor;
     }));
 }
 
@@ -66,9 +66,22 @@ function removeSelected(){
     selected.classList.remove("selected");
 }
 
+function random_rgba() {
+    let o = Math.round, r = Math.random, s = 255;
+    return 'rgba(' + o(r() * s) + ',' + o(r() * s) + ',' + o(r() * s) + ',' + r().toFixed(1) + ')';
+}
+
+function randomize(){
+    removeSelected();
+    document.querySelector("#randomButton").classList.add("selected");
+    isRandom = true;
+}
+
 // default grid is of size 16, color is black
 let size = 16;
 let currColor = "black";
+let isRandom = false;
+
 document.querySelector("#black").classList.add("selected");
 
 setup(size);
@@ -82,6 +95,7 @@ colors.forEach(color => {
         const target = e.target;
         currColor = target.id;
 
+        if (isRandom) isRandom = false;
         removeSelected();
 
         target.classList.add("selected");
@@ -93,6 +107,7 @@ const picker = document.querySelector("#picker");
 picker.addEventListener("input", (e) => {
     currColor = e.target.value;
     
+    if (isRandom) isRandom = false;
     removeSelected();
 
     e.target.classList.add("selected");
@@ -100,6 +115,7 @@ picker.addEventListener("input", (e) => {
 
 document.querySelector("#eraser").addEventListener("click", (e) => {
     currColor = "white";
+    if (isRandom) isRandom = false;
     removeSelected();
     document.querySelector("#eraser").classList.add("selected");
 });

@@ -31,7 +31,7 @@ h1 {
     align-items: center;
 }
 
-#reset, #changeSizeButton {
+#reset, #changeSizeButton, #randomButton {
     padding: 0.4rem 1.2rem;
     border: 0.1rem solid #D4A373;
     border-radius: 0.3rem;
@@ -41,7 +41,11 @@ h1 {
     font-size: 1.2rem;
 }
 
-#reset:hover, #changeSizeButton:hover {
+#randomButton {
+    margin: 0.15rem;
+}
+
+#reset:hover, #changeSizeButton:hover, #randomButton:hover {
     background-color: #dac69e;
     color: white;
     box-shadow: 0 0 0.4rem gray;
@@ -134,7 +138,7 @@ h1 {
     border-radius: 0.3rem;
 }
 
-.color:hover, #picker:hover, #reset, #changeSizeButton, #eraser {
+.color, #picker, #reset, #changeSizeButton, #eraser, #randomButton {
     cursor: pointer;
 }
 
