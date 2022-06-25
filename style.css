@@ -103,21 +103,27 @@ h1 {
 }
 
 ::-webkit-color-swatch-wrapper {
-    padding: 2px;
+
+    padding: 1px;
 }
 
 ::-webkit-color-swatch {
-    border: 0;
+    border: 1px;
     border-radius: 0;
 }
 
 ::-moz-color-swatch,
 ::-moz-focus-inner {
-    border: 0;
+    border: 1px;
 }
 
 ::-moz-focus-inner {
     padding: 0;
+}
+
+#eraser {
+    border-radius: 0.3rem;
+    padding: 0.15rem;
 }
 
 .color {
@@ -126,6 +132,14 @@ h1 {
     border: 1px solid #D4A373;
     padding: 0.8rem;
     border-radius: 0.3rem;
+}
+
+.color:hover, #picker:hover, #reset, #changeSizeButton, #eraser {
+    cursor: pointer;
+}
+
+.selected {
+    outline: 0.2rem solid #8d7b67;
 }
 
 img {

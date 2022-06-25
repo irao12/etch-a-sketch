@@ -1,6 +1,3 @@
-let size = 16;
-let currColor = "black";
-
 function reset () {
     setup(size);
 }
@@ -64,17 +61,45 @@ function setup(size){
     }));
 }
 
+function removeSelected(){
+    const selected = document.querySelector(".selected");
+    selected.classList.remove("selected");
+}
+
+// default grid is of size 16, color is black
+let size = 16;
+let currColor = "black";
+document.querySelector("#black").classList.add("selected");
+
 setup(size);
 const colors = document.querySelectorAll(".color");
 
+
+// the color changes to the id of the preset colors, remove any selected options
 colors.forEach(color => {
     color.style.backgroundColor = color.id;
-    color.addEventListener("click", (e)=> currColor = e.target.id);
+    color.addEventListener("click", (e)=> {
+        const target = e.target;
+        currColor = target.id;
+
+        removeSelected();
+
+        target.classList.add("selected");
+    });
 });
 
-const picker = document.querySelector("#picker");
-picker.addEventListener("input", (e) => currColor = e.target.value);
-const wheel = document.querySelector("#thirdRow img");
-wheel.addEventListener("click", picker.click());
 
-document.querySelector("#eraser").addEventListener("click", () => currColor = "white");
+const picker = document.querySelector("#picker");
+picker.addEventListener("input", (e) => {
+    currColor = e.target.value;
+    
+    removeSelected();
+
+    e.target.classList.add("selected");
+});
+
+document.querySelector("#eraser").addEventListener("click", (e) => {
+    currColor = "white";
+    removeSelected();
+    document.querySelector("#eraser").classList.add("selected");
+});
