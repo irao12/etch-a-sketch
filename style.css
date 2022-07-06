@@ -5,7 +5,7 @@ body {
     padding: 0;
     background-color: #FEFAE0;
     font-family: "Anek Latin", sans-serif;
-    letter-spacing: 0.1rem;
+    letter-spacing: 1.2px;
     color: #745a3e;
 
     display: flex;
@@ -14,20 +14,20 @@ body {
 }
 
 h1 {
-    margin: 2.5rem;
+    margin: 40px;
 }
 
 #content {
     display: flex;
     flex-direction: row;
-    gap: 1rem;
+    gap: 16px;
 }
 
 #tools {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    max-width: 9rem;
+    max-width: 150px;
     align-items: center;
 }
 
@@ -56,9 +56,9 @@ h1 {
     flex-direction: column;
     align-items: center;
     gap: 0.9rem;
-    border: 0.1rem solid #D4A373;
-    border-radius: 0.3rem;
-    padding: 0.8rem;
+    border: 1.6px solid #D4A373;
+    border-radius: 5px;
+    padding: 12px;
 }
 
 #sizeSelector > input {
@@ -185,4 +185,20 @@ img {
 
 .lastCol {
     border-right: 1px #b3a9a0 solid;
+}
+
+@media only screen and (max-width: 900px) {
+    #content{
+        flex-direction: column-reverse;
+    } 
+    #tools {
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 40rem;
+        align-items: center;
+        gap: 20px
+    }
+    .error {
+        width: 150px;
+    }
 }
