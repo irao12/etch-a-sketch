@@ -156,6 +156,11 @@ img {
     padding: 30px;
 }
 
+.board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .canvas {
     width: 480px;
@@ -190,6 +195,7 @@ img {
     #content{
         flex-direction: column-reverse;
     } 
+
     #tools {
         flex-direction: row;
         justify-content: space-between;
@@ -199,5 +205,23 @@ img {
     }
     .error {
         width: 150px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .board {
+        width: 275px;
+        height: 275px;
+        padding: 20px
+    }
+
+    .canvas {
+        width: 275px;
+        height: 275px;
+    }
+
+    #tools {
+        flex-direction: column;
     }
 }
