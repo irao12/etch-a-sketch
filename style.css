@@ -32,9 +32,9 @@ h1 {
 }
 
 #reset, #changeSizeButton, #randomButton {
-    padding: 0.4rem 1.2rem;
-    border: 0.1rem solid #D4A373;
-    border-radius: 0.3rem;
+    padding: 7px 20px;
+    border: 1.6px solid #D4A373;
+    border-radius: 4.8px;
     background-color: #f8efdb;
     color: #745a3e;
     font-family: "Anek Latin", sans-serif;
@@ -42,20 +42,20 @@ h1 {
 }
 
 #randomButton {
-    margin: 0.15rem;
+    margin: 2.5px;
 }
 
 #reset:hover, #changeSizeButton:hover, #randomButton:hover {
     background-color: #dac69e;
     color: white;
-    box-shadow: 0 0 0.4rem gray;
+    box-shadow: 0 0 6.4px gray;
 }
 
 #sizeSelector {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.9rem;
+    gap: 15px;
     border: 1.6px solid #D4A373;
     border-radius: 5px;
     padding: 12px;
@@ -63,7 +63,7 @@ h1 {
 
 #sizeSelector > input {
     display: block;
-    width: 8rem;
+    width: 120px;
 }
 
 .error {
@@ -72,37 +72,37 @@ h1 {
 }
 
 #changeSizeButton {
-    padding: 0.4rem 2rem;
+    padding: 6.4px 32px;
 }
 
 #colorSelector{
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
+    gap: 6.4px;
 }
 
 #firstRow, #secondRow, #thirdRow{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    gap: 0.4rem;
+    gap: 6px;
 }
 
 #thirdRow {
     justify-content: center;
-    gap: 0.6rem;
-    margin-top: 1rem;
+    gap: 9px;
+    margin-top: 16px;
 }
 
 #thirdRow > input {
-    width: 2.8rem;
-    height: 2.8rem;
+    width: 45px;
+    height: 45px;
     appearance: none;
      -moz-appearance: none;
     -webkit-appearance: none;
     background: none;
     border: 1px solid #D4A373;
-    border-radius: 0.3rem;
+    border-radius: 5px;
     padding: 0;
 }
 
@@ -127,15 +127,15 @@ h1 {
 
 #eraser {
     border-radius: 0.3rem;
-    padding: 0.15rem;
+    padding: 2.5px;
 }
 
 .color {
-    width: 1rem;
-    height: 1rem;
+    width: 16px;
+    height: 16px;
     border: 1px solid #D4A373;
-    padding: 0.8rem;
-    border-radius: 0.3rem;
+    padding: 13px;
+    border-radius: 5px;
 }
 
 .color, #picker, #reset, #changeSizeButton, #eraser, #randomButton {
@@ -143,24 +143,23 @@ h1 {
 }
 
 .selected {
-    outline: 0.2rem solid #8d7b67;
+    outline: 3px solid #8d7b67;
 }
 
 img {
-    width: 3rem;
-    height: 3rem;
-
+    width: 50px;
+    height: 50px;
 }
 
 #tools, .board {
-    border: 0.8rem solid #CCD5AE;
-    padding: 1.8rem;
+    border: 13px solid #CCD5AE;
+    padding: 30px;
 }
 
 
 .canvas {
-    width: 30rem;
-    height: 30rem;
+    width: 480px;
+    height: 480px;
 
     display: flex;
     flex-direction: column;
@@ -194,7 +193,7 @@ img {
     #tools {
         flex-direction: row;
         justify-content: space-between;
-        max-width: 40rem;
+        max-width: 640px;
         align-items: center;
         gap: 20px
     }
