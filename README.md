@@ -13,6 +13,8 @@ live demo: https://irao12.github.io/etch-a-sketch/
 # Images used:
 - Etch-a-Sketch Icon: https://findicons.com/icon/143517/etch_a_sketch
 
+- Anek Latin Font: https://fonts.google.com/specimen/Anek+Latin
+
 - Color Picker Wheel: https://pixabay.com/illustrations/color-spectrum-circle-1192509/
 
 - Eraser: https://pixabay.com/vectors/eraser-erase-rubber-office-school-152956/
