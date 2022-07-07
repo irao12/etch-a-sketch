@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Anek+Latin:wght@200;300;400&display=swap');
+@font-face {
+    font-family: "Anek Latin";
+    src: url("./AnekLatin-Regular.ttf");
+}
 
 body {
     margin: 0;
@@ -209,7 +212,6 @@ img {
 }
 
 @media only screen and (max-width: 600px) {
-
     .board {
         width: 290px;
         height: 290px;
