@@ -42,7 +42,7 @@ h1 {
 }
 
 #randomButton {
-    margin: 2.5px;
+    margin: 5px;
 }
 
 #reset:hover, #changeSizeButton:hover, #randomButton:hover {
@@ -81,7 +81,7 @@ h1 {
     gap: 6.4px;
 }
 
-#firstRow, #secondRow, #thirdRow{
+.colorRow{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -211,17 +211,51 @@ img {
 @media only screen and (max-width: 600px) {
 
     .board {
-        width: 275px;
-        height: 275px;
+        width: 290px;
+        height: 290px;
         padding: 20px
     }
 
     .canvas {
-        width: 275px;
-        height: 275px;
+        width: 290px;
+        height: 290px;
     }
 
     #tools {
         flex-direction: column;
+        justify-content: space-between;
+        width: 250;
+        padding: 25px;
+    }
+
+    #reset {
+        padding: 20px 70px;
+    }
+
+    #sizeSelector > input {
+        width: 180px
+    }
+
+    #colorSelector {
+        gap: 15px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #randomButton{
+        padding: 15px 50px;
+    }
+
+    .color {
+        padding: 17px;
+    }
+
+    #thirdRow > input {
+        width: 52px;
+        height: 52px;
+    }
+    
+    .colorRow {
+        gap: 20px;
     }
 }
