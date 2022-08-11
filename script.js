@@ -63,6 +63,9 @@ function setup(size) {
 				? random_rgba()
 				: currColor;
 		});
+		square.addEventListener("touchmove", (e) => {
+			e.preventDefault();
+		});
 	});
 }
 
