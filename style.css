@@ -1,263 +1,348 @@
 @font-face {
-    font-family: "Anek Latin";
-    src: url("./AnekLatin-Regular.ttf");
+	font-family: "Anek Latin";
+	src: url("./AnekLatin-Regular.ttf");
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #FEFAE0;
-    font-family: "Anek Latin", sans-serif;
-    letter-spacing: 1.2px;
-    color: #745a3e;
+	margin: 0;
+	padding: 0;
+	background-color: #fefae0;
+	font-family: "Anek Latin", sans-serif;
+	letter-spacing: 1.2px;
+	color: #745a3e;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	box-sizing: border-box;
+}
+
+.menu-toggle {
+	display: none;
+	height: 40px;
+	width: 40px;
+	margin-top: 10px;
+	margin-left: 10px;
+	align-self: flex-start;
+
+	position: relative;
+}
+
+.menu-toggle > svg {
+	opacity: 0;
+	pointer-events: none;
+	fill: #808866;
+	cursor: pointer;
+	position: fixed;
+	top: 10px;
+
+	transition: all 150ms ease-in-out;
+}
+
+.menu-toggle > svg.active {
+	pointer-events: auto;
+	opacity: 1;
 }
 
 h1 {
-    margin: 40px;
+	margin: 30px 30px 40px 30px;
 }
 
 #content {
-    display: flex;
-    flex-direction: row;
-    gap: 16px;
+	display: flex;
+	flex-direction: row;
+	gap: 16px;
+	margin: auto;
 }
 
 #tools {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    max-width: 150px;
-    align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	background-color: #fefae0;
+	align-items: center;
 }
 
-#reset, #changeSizeButton, #randomButton {
-    padding: 7px 20px;
-    border: 1.6px solid #D4A373;
-    border-radius: 4.8px;
-    background-color: #f8efdb;
-    color: #745a3e;
-    font-family: "Anek Latin", sans-serif;
-    font-size: 1.2rem;
+.modal {
+	display: none;
 }
 
+#reset,
+#changeSizeButton,
 #randomButton {
-    margin: 5px;
-}
-
-#reset:hover, #changeSizeButton:hover, #randomButton:hover {
-    background-color: #dac69e;
-    color: white;
-    box-shadow: 0 0 6.4px gray;
+	margin-bottom: 10px;
+	padding: 7px 20px;
+	border: 1.6px solid #d4a373;
+	border-radius: 4.8px;
+	background-color: #f8efdb;
+	color: #745a3e;
+	font-family: "Anek Latin", sans-serif;
+	font-size: 1.2rem;
 }
 
 #sizeSelector {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    border: 1.6px solid #D4A373;
-    border-radius: 5px;
-    padding: 12px;
+	margin-bottom: 10px;
+}
+
+#randomButton {
+	margin: 5px;
+}
+
+#reset:hover,
+#changeSizeButton:hover,
+#randomButton:hover {
+	background-color: #dac69e;
+	color: white;
+	box-shadow: 0 0 6.4px gray;
+}
+
+#sizeSelector {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 15px;
+	border: 1.6px solid #d4a373;
+	border-radius: 5px;
+	padding: 12px;
 }
 
 #sizeSelector > input {
-    display: block;
-    width: 120px;
+	display: block;
+	width: 120px;
 }
 
 .error {
-    font-size: 1.0rem;
-    color: red;
+	font-size: 1rem;
+	color: red;
 }
 
 #changeSizeButton {
-    padding: 6.4px 32px;
+	padding: 6.4px 32px;
 }
 
-#colorSelector{
-    display: flex;
-    flex-direction: column;
-    gap: 6.4px;
+#colorSelector {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
 }
 
-.colorRow{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    gap: 6px;
+.colorRow {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	gap: 5px;
 }
 
 #thirdRow {
-    justify-content: center;
-    gap: 9px;
-    margin-top: 16px;
+	justify-content: center;
+	gap: 9px;
+	margin-top: 16px;
 }
 
 #thirdRow > input {
-    width: 45px;
-    height: 45px;
-    appearance: none;
-     -moz-appearance: none;
-    -webkit-appearance: none;
-    background: none;
-    border: 1px solid #D4A373;
-    border-radius: 5px;
-    padding: 0;
+	width: 45px;
+	height: 45px;
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	background: none;
+	border: 1px solid #d4a373;
+	border-radius: 5px;
+	padding: 0;
 }
 
 ::-webkit-color-swatch-wrapper {
-
-    padding: 1px;
+	padding: 1px;
 }
 
 ::-webkit-color-swatch {
-    border: 1px;
-    border-radius: 0;
+	border: 1px;
+	border-radius: 0;
 }
 
 ::-moz-color-swatch,
 ::-moz-focus-inner {
-    border: 1px;
+	border: 1px;
 }
 
 ::-moz-focus-inner {
-    padding: 0;
+	padding: 0;
 }
 
 #eraser {
-    border-radius: 0.3rem;
-    padding: 2.5px;
+	border-radius: 0.3rem;
+	padding: 2.5px;
+	margin-top: 10px;
 }
 
 .color {
-    width: 16px;
-    height: 16px;
-    border: 1px solid #D4A373;
-    padding: 13px;
-    border-radius: 5px;
+	width: 16px;
+	height: 16px;
+	border: 1px solid #d4a373;
+	padding: 13px;
+	border-radius: 5px;
 }
 
-.color, #picker, #reset, #changeSizeButton, #eraser, #randomButton {
-    cursor: pointer;
+.color,
+#picker,
+#reset,
+#changeSizeButton,
+#eraser,
+#randomButton {
+	cursor: pointer;
 }
 
 .selected {
-    outline: 3px solid #8d7b67;
+	outline: 3px solid #8d7b67;
 }
 
 img {
-    width: 50px;
-    height: 50px;
+	width: 50px;
+	height: 50px;
 }
 
-#tools, .board {
-    border: 13px solid #CCD5AE;
-    padding: 30px;
+#tools,
+.board {
+	border: 13px solid #ccd5ae;
+	padding: 20px;
 }
 
 .board {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	max-width: 100%;
 }
 
 .canvas {
-    width: 480px;
-    height: 480px;
+	width: 480px;
+	height: 480px;
 
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .row {
-    display: flex;
-    flex-direction: row;
-    flex: 1;
+	display: flex;
+	flex-direction: row;
+	flex: 1;
 }
 
 .lastRow {
-    border-bottom: 1px solid #b3a9a0;
+	border-bottom: 1px solid #b3a9a0;
 }
 
 .square {
-    flex: 1;
-    border-top: 1px solid #b3a9a0;
-    border-left: 1px solid #b3a9a0;
-    background-color: white;
+	flex: 1;
+	border-top: 1px solid #b3a9a0;
+	border-left: 1px solid #b3a9a0;
+	background-color: white;
 }
 
 .lastCol {
-    border-right: 1px #b3a9a0 solid;
+	border-right: 1px #b3a9a0 solid;
 }
 
 @media only screen and (max-width: 900px) {
-    #content{
-        flex-direction: column-reverse;
-    } 
+	#content {
+		flex-direction: column-reverse;
+	}
 
-    #tools {
-        flex-direction: row;
-        justify-content: space-between;
-        max-width: 640px;
-        align-items: center;
-        gap: 20px
-    }
-    .error {
-        width: 150px;
-    }
+	.menu-toggle {
+		display: block;
+	}
+
+	#tools {
+		flex-direction: column;
+		justify-content: space-between;
+		width: 100%;
+		max-width: 100%;
+		padding: 15px;
+		box-sizing: border-box;
+
+		position: fixed;
+		z-index: 1;
+		top: 50px;
+		left: 0;
+		opacity: 0;
+		pointer-events: none;
+		transform: translateX(-200px);
+
+		transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+	}
+
+	#tools.active {
+		opacity: 1;
+		pointer-events: auto;
+		transform: translateX(0);
+		z-index: 1;
+	}
+
+	.modal {
+		display: block;
+		opacity: 0;
+		pointer-events: none;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		bottom: 0;
+		background-color: #fefae0;
+
+		transition: all 150ms ease-in-out;
+	}
+
+	.modal.active {
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	.error {
+		width: 150px;
+	}
+
+	#reset {
+		padding: 20px 70px;
+	}
+
+	#sizeSelector > input {
+		width: 180px;
+	}
+
+	#colorSelector {
+		gap: 5px;
+		justify-content: center;
+		align-items: center;
+	}
+
+	#randomButton {
+		padding: 15px 50px;
+	}
+
+	.color {
+		padding: 17px;
+	}
+
+	#thirdRow > input {
+		width: 52px;
+		height: 52px;
+	}
+
+	.colorRow {
+		gap: 10px;
+	}
 }
 
 @media only screen and (max-width: 600px) {
-    .board {
-        width: 290px;
-        height: 290px;
-        padding: 20px
-    }
+	.board {
+		width: 290px;
+		height: 290px;
+		padding: 20px;
+	}
 
-    .canvas {
-        width: 290px;
-        height: 290px;
-    }
-
-    #tools {
-        flex-direction: column;
-        justify-content: space-between;
-        width: 250;
-        padding: 25px;
-    }
-
-    #reset {
-        padding: 20px 70px;
-    }
-
-    #sizeSelector > input {
-        width: 180px
-    }
-
-    #colorSelector {
-        gap: 15px;
-        justify-content: center;
-        align-items: center;
-    }
-
-    #randomButton{
-        padding: 15px 50px;
-    }
-
-    .color {
-        padding: 17px;
-    }
-
-    #thirdRow > input {
-        width: 52px;
-        height: 52px;
-    }
-    
-    .colorRow {
-        gap: 20px;
-    }
+	.canvas {
+		width: 290px;
+		height: 290px;
+	}
 }

@@ -160,3 +160,29 @@ canvas.addEventListener("touchmove", (e) => {
 		canvas.lastSquare = square;
 	}
 });
+
+const closeMenuButton = document.querySelector(".close");
+const openMenuButton = document.querySelector(".open");
+const tools = document.querySelector("#tools");
+const modal = document.querySelector(".modal");
+
+openMenuButton.addEventListener("click", () => {
+	openMenuButton.classList.remove("active");
+	closeMenuButton.classList.add("active");
+	tools.classList.add("active");
+	modal.classList.add("active");
+});
+
+closeMenuButton.addEventListener("click", () => {
+	openMenuButton.classList.add("active");
+	closeMenuButton.classList.remove("active");
+	tools.classList.remove("active");
+	modal.classList.remove("active");
+});
+
+modal.addEventListener("click", () => {
+	openMenuButton.classList.add("active");
+	closeMenuButton.classList.remove("active");
+	tools.classList.remove("active");
+	modal.classList.remove("active");
+});
