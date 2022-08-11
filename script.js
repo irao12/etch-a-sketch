@@ -58,12 +58,7 @@ function setup(size) {
 
 	const squares = document.querySelectorAll(".square");
 	squares.forEach((square) => {
-		square.addEventListener("mouseover", function (e) {
-			e.target.style.backgroundColor = isRandom
-				? random_rgba()
-				: currColor;
-		});
-		square.addEventListener("touchstart", function (e) {
+		square.addEventListener("click", function (e) {
 			e.target.style.backgroundColor = isRandom
 				? random_rgba()
 				: currColor;
@@ -138,4 +133,22 @@ document.querySelector("#eraser").addEventListener("click", (e) => {
 	if (isRandom) isRandom = false;
 	removeSelected();
 	document.querySelector("#eraser").classList.add("selected");
+});
+
+const canvas = document.querySelector(".canvas");
+canvas.addEventListener("touchmove", (e) => {
+	e.preventDefault();
+
+	const touch = e.touches[0];
+	const pageX = touch.clientX;
+	const pageY = touch.clientY;
+
+	const square = document.elementFromPoint(pageX, pageY);
+	if (!canvas.lastSquare) {
+		square.click();
+		canvas.lastSquare = square;
+	} else if (canvas.lastSquare !== square) {
+		square.click();
+		canvas.lastSquare = square;
+	}
 });
