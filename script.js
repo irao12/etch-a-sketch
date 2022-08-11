@@ -56,13 +56,15 @@ function setup(size) {
 		canvas.appendChild(currRow);
 	}
 
+	function changeColor(event) {
+		event.target.style.backgroundColor = isRandom
+			? random_rgba()
+			: currColor;
+	}
+
 	const squares = document.querySelectorAll(".square");
 	squares.forEach((square) => {
-		square.addEventListener("click", function (e) {
-			e.target.style.backgroundColor = isRandom
-				? random_rgba()
-				: currColor;
-		});
+		square.addEventListener("mouseover", changeColor);
 		square.addEventListener("touchmove", (e) => {
 			e.preventDefault();
 		});
@@ -139,6 +141,7 @@ document.querySelector("#eraser").addEventListener("click", (e) => {
 });
 
 const canvas = document.querySelector(".canvas");
+
 canvas.addEventListener("touchmove", (e) => {
 	e.preventDefault();
 
@@ -147,11 +150,13 @@ canvas.addEventListener("touchmove", (e) => {
 	const pageY = touch.clientY;
 
 	const square = document.elementFromPoint(pageX, pageY);
+
+	const mouseoverEvent = new Event("mouseover");
 	if (!canvas.lastSquare) {
-		square.click();
+		square.dispatchEvent(mouseoverEvent);
 		canvas.lastSquare = square;
 	} else if (canvas.lastSquare !== square) {
-		square.click();
+		square.dispatchEvent(mouseoverEvent);
 		canvas.lastSquare = square;
 	}
 });
