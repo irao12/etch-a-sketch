@@ -68,6 +68,7 @@ function setup(size) {
 		square.addEventListener("touchmove", (e) => {
 			e.preventDefault();
 		});
+		square.isSquare = true;
 	});
 }
 
@@ -152,12 +153,14 @@ canvas.addEventListener("touchmove", (e) => {
 	const square = document.elementFromPoint(pageX, pageY);
 
 	const mouseoverEvent = new Event("mouseover");
-	if (!canvas.lastSquare) {
-		square.dispatchEvent(mouseoverEvent);
-		canvas.lastSquare = square;
-	} else if (canvas.lastSquare !== square) {
-		square.dispatchEvent(mouseoverEvent);
-		canvas.lastSquare = square;
+	if (square && square.isSquare) {
+		if (!canvas.lastSquare) {
+			square.dispatchEvent(mouseoverEvent);
+			canvas.lastSquare = square;
+		} else if (canvas.lastSquare !== square) {
+			square.dispatchEvent(mouseoverEvent);
+			canvas.lastSquare = square;
+		}
 	}
 });
 
